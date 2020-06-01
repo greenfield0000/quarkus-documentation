@@ -1,0 +1,27 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Предисловие}{3}%
+\contentsline {section}{\numberline {2}Что такое Quakus Extension}{3}%
+\contentsline {paragraph}{ }{3}%
+\contentsline {section}{\numberline {3}Запуск приложения в простом java приложении}{3}%
+\contentsline {paragraph}{ }{3}%
+\contentsline {paragraph}{\includegraphics [scale=1.5, width=\textwidth ]{1}}{3}%
+\contentsline {paragraph}{\includegraphics [scale=1.5, width=\textwidth ]{2}}{3}%
+\contentsline {section}{\numberline {4}Как создать расширение}{4}%
+\contentsline {paragraph}{\includegraphics [scale=1, width=\textwidth ]{3}}{4}%
+\contentsline {section}{\numberline {5}Имплементация runtime модуля}{4}%
+\contentsline {paragraph}{ }{4}%
+\contentsline {paragraph}{\includegraphics [scale=1.5, width=\textwidth ]{4}}{5}%
+\contentsline {paragraph}{\includegraphics [scale=1.5, width=\textwidth ]{5}}{5}%
+\contentsline {section}{\numberline {6}Реализация конфигурации}{5}%
+\contentsline {paragraph}{\includegraphics [scale=0.5, width=\textwidth , height=10cm]{6}}{6}%
+\contentsline {section}{\numberline {7}Имплементация поставщика notification API}{6}%
+\contentsline {paragraph}{\includegraphics [scale=0.5, width=\textwidth , height=15cm]{7}}{7}%
+\contentsline {section}{\numberline {8}Имплементация Рекордера}{7}%
+\contentsline {paragraph}{\includegraphics [width=\textwidth , height=18cm]{8}}{8}%
+\contentsline {section}{\numberline {9}Реализация deployment}{8}%
+\contentsline {section}{\numberline {10}Сборка и настройка зависимостей}{9}%
+\contentsline {paragraph}{\includegraphics [width=\textwidth , height=18cm]{9}}{10}%
+\contentsline {section}{\numberline {11}Реализация Build Step Processors}{10}%
+\contentsline {paragraph}{\includegraphics [width=\textwidth , height=10cm]{10}}{11}%
+\contentsline {section}{\numberline {12}Тестирование}{12}%
+\contentsline {paragraph}{\includegraphics [width=\textwidth , height=18cm]{11}}{12}%
