@@ -8,9 +8,15 @@
 \usepackage{url}
 % Работа с изображением
 \usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{float}
 \graphicspath{ {./images/} }
 % для листинга
 \usepackage{listings}
+
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
 
 
 \begin{document}
@@ -36,7 +42,10 @@
 \paragraph{ } 
 Давайте попробуем реализовать расширение для отправки почты во время поднятия контекста приложения (будем его дальше называть notification). Но прежде чем мы углубимся, нам сначала нужно показать, как отправлять сообщения из основного метода Java. Это значительно облегчит реализацию расширения. Точкой входа для notification является API notification. Чтобы использовать это, нам нужен адрес отправителя и получателя:
 
-\paragraph{\includegraphics[scale=1.5, width=\textwidth]{1}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5, width=10cm]{1}
+\end{figure}
 ~
 
 При запуске можно увидеть следующее:
@@ -60,7 +69,10 @@
 
 	Технически говоря, расширение Quarkus - это многомодульный проект Maven, состоящий из двух модулей. Первый - это модуль времени выполнения, в котором мы реализуем требования. Второй - это модуль развертывания для обработки конфигурации и генерации кода времени выполнения. Итак, начнем с создания многомодульного проекта Maven под названием quarkus-notification-parent, который содержит два подмодуля: время выполнения и развертывание:
 
-\paragraph{\includegraphics[scale=1, width=\textwidth]{3}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1, width=8cm]{3}
+\end{figure}
 
 
 \section{Имплементация runtime модуля}
@@ -74,7 +86,10 @@
 	
 	Модуль runtime будет зависеть от модуля ядра Quarkus и, в конечном итоге, модулей времени выполнения необходимых расширений. Здесь нам нужна зависимость нашего импровизированного фреймворка:
 
-\paragraph{\includegraphics[scale=1.5, width=\textwidth]{4}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5, width=9cm]{4}
+\end{figure}
 
 
 После добавления этой зависимости в runtime модуль он будет выглядеть следующим образом:
@@ -89,13 +104,19 @@
 	
 Конфигурационный класс будет иметь следующий вид:
 
-\paragraph{\includegraphics[scale=0.5, width=\textwidth, height=10cm]{6}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5, width=11cm, height=7cm]{6}
+\end{figure}
 
 \section{Имплементация поставщика notification API}
 
 Выше мы видели, как работать с notification через простой вызов. Теперь мы воспроизведем тот же код, но в виде компонента CDI, и для этой цели будем использовать производителя CDI:
 
-\paragraph{\includegraphics[scale=0.5, width=\textwidth, height=15cm]{7}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5, width=11cm]{7}
+\end{figure}
 	
 	Метод, помеченный аннотацией @Produces, предоставляет бин с настройками, которые будут указаны в application.properties.
 
@@ -104,7 +125,10 @@
 
 На этом шаге мы напишем класс Рекордера, который действует как прокси для записи байт-кода и настройки логики времени выполнения:
 
-\paragraph{\includegraphics[width=\textwidth, height=18cm]{8}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13cm]{8}
+\end{figure}
 ~
 
 	Класс рекордер должен содержать аннотацию @Recorder. Через него мы устанавливаем конфигурацию, а также отправляем сообщение.
@@ -127,7 +151,10 @@
 
 ~
 
-\paragraph{\includegraphics[width=\textwidth, height=18cm]{9}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{9}
+\end{figure}
 
 \section{Реализация Build Step Processors}
 ~
@@ -144,14 +171,20 @@
 
 Код процессора выглядит следующим образом:
 
-\paragraph{\includegraphics[width=\textwidth, height=10cm]{10}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{10}
+\end{figure}
 
 \newpage
 \section{Тестирование}
 
 Теперь можно протестировать работу расширения. Для этого подключаем ее как зависимость в наш новый проект. Для подключения нужно использовать группу и артефакт от модуля runtime.
 
-\paragraph{\includegraphics[width=\textwidth, height=18cm]{11}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{11}
+\end{figure}
 ~
 
 После запуска мы увидим, что отправляется наше импровизированное сообщение, а также увидим наше расширение в списке подключенных
